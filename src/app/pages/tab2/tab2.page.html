@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Historial
+    </ion-title>
+    <ion-icon (click)="enviarCorreo()" slot="start" name="airplane-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let pins of dataLocal.guardados">
+    <ion-item (click)="dataLocal.abrirRegistro(pins)">
+      <ion-icon slot="start" name="{{pins.icon}}"></ion-icon>
+      <ion-title>{{pins.text}}</ion-title>
+      <ion-label>{{pins.type}}</ion-label>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>
